@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Velmora Home | Furniture &amp; Decor</title>
+  <meta name="description" content="Velmora Home — thoughtfully made furniture, lighting and decor, delivered to your door.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1e1b18;
+      --muted: #6b645c;
+      --line: #e7e1d9;
+      --cream: #f7f3ee;
+      --sand: #ede4d8;
+      --accent: #8a5a3c;
+      --accent-dark: #6f4630;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, sans-serif; color: var(--ink); background: #fff; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    .promo { background: var(--ink); color: #f3ede6; text-align: center; font-size: 13px; padding: 8px 16px; letter-spacing: .02em; }
+
+    header { border-bottom: 1px solid var(--line); background: #fff; position: sticky; top: 0; z-index: 10; }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 24px; }
+    .logo { font-family: "Playfair Display", serif; font-size: 26px; font-weight: 600; letter-spacing: .01em; }
+    .logo span { color: var(--accent); }
+    .menu { display: flex; gap: 28px; font-size: 14px; font-weight: 500; }
+    .menu a:hover { color: var(--accent); }
+    .icons { display: flex; gap: 18px; font-size: 14px; color: var(--muted); }
+
+    .hero { background: linear-gradient(120deg, var(--cream) 0%, var(--sand) 100%); }
+    .hero .wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; padding-top: 72px; padding-bottom: 72px; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: 12px; color: var(--accent); font-weight: 600; }
+    .hero h1 { font-family: "Playfair Display", serif; font-weight: 500; font-size: 52px; line-height: 1.1; margin: 14px 0 18px; }
+    .hero p { font-size: 17px; line-height: 1.7; color: var(--muted); max-width: 480px; }
+    .cta { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 14px 26px; border-radius: 2px; font-size: 14px; font-weight: 600; letter-spacing: .03em; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent-dark); }
+    .btn-ghost { border: 1px solid var(--ink); }
+    .hero-art { aspect-ratio: 4 / 3.4; border-radius: 4px; overflow: hidden; }
+    .hero-art svg { width: 100%; height: 100%; display: block; }
+
+    .perks { border-bottom: 1px solid var(--line); }
+    .perks .wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding-top: 22px; padding-bottom: 22px; font-size: 13px; color: var(--muted); }
+    .perks strong { display: block; color: var(--ink); font-size: 14px; margin-bottom: 2px; }
+
+    section.block { padding: 72px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 28px; gap: 16px; }
+    .section-head h2 { font-family: "Playfair Display", serif; font-weight: 500; font-size: 34px; margin: 0; }
+    .section-head a { font-size: 14px; font-weight: 600; color: var(--accent); }
+
+    .cats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .cat { border-radius: 4px; padding: 22px; height: 200px; display: flex; align-items: flex-end; font-weight: 600; }
+    .c1 { background: #e9ddd0; } .c2 { background: #dfe3da; } .c3 { background: #efe6d3; } .c4 { background: #e3dde6; }
+
+    .products { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .card .img { aspect-ratio: 1; border-radius: 4px; background: var(--cream); display: grid; place-items: center; margin-bottom: 14px; }
+    .card .img svg { width: 62%; height: 62%; }
+    .card h3 { font-size: 15px; font-weight: 600; margin: 0 0 4px; }
+    .card .meta { font-size: 13px; color: var(--muted); }
+    .card .price { font-size: 15px; margin-top: 8px; }
+    .card .price s { color: var(--muted); margin-left: 6px; font-size: 13px; }
+    .badge { display: inline-block; font-size: 11px; background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 2px; margin-bottom: 8px; }
+
+    .story { background: var(--cream); }
+    .story .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    .story h2 { font-family: "Playfair Display", serif; font-weight: 500; font-size: 34px; margin: 10px 0 16px; }
+    .story p { color: var(--muted); line-height: 1.75; }
+    .quote { background: #fff; border: 1px solid var(--line); padding: 32px; border-radius: 4px; }
+    .quote p { font-family: "Playfair Display", serif; font-size: 20px; color: var(--ink); line-height: 1.5; margin: 0 0 14px; }
+    .quote span { font-size: 13px; color: var(--muted); }
+
+    .news { text-align: center; }
+    .news h2 { font-family: "Playfair Display", serif; font-weight: 500; font-size: 30px; margin: 0 0 10px; }
+    .news p { color: var(--muted); margin: 0 0 22px; }
+    .news form { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+    .news input { width: min(360px, 100%); padding: 13px 14px; border: 1px solid var(--line); font: inherit; }
+
+    footer { background: var(--ink); color: #cfc7bd; font-size: 14px; }
+    footer .wrap { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 32px; padding-top: 56px; padding-bottom: 40px; }
+    footer h4 { color: #fff; font-size: 14px; margin: 0 0 14px; }
+    footer li { list-style: none; margin-bottom: 9px; }
+    footer ul { padding: 0; margin: 0; }
+    .legal { border-top: 1px solid #3a352f; text-align: center; font-size: 12px; padding: 18px; color: #9b9288; }
+
+    @media (max-width: 900px) {
+      .menu, .icons { display: none; }
+      .hero .wrap, .story .wrap { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 38px; }
+      .perks .wrap, .cats, .products { grid-template-columns: repeat(2, 1fr); }
+      footer .wrap { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="promo">Free delivery on orders over $150 · 30-day easy returns</div>
+
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="#">Velmora<span>.</span></a>
+      <nav class="menu">
+        <a href="#">Living Room</a>
+        <a href="#">Bedroom</a>
+        <a href="#">Dining</a>
+        <a href="#">Lighting</a>
+        <a href="#">Decor</a>
+        <a href="#">Sale</a>
+      </nav>
+      <div class="icons"><a href="#">Search</a><a href="#">Account</a><a href="#">Cart (0)</a></div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Autumn Collection 2026</div>
+        <h1>Warm, honest pieces for the way you live.</h1>
+        <p>Solid-wood furniture, hand-thrown ceramics and soft lighting, made in small batches by independent workshops and delivered to your door.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#">Shop the collection</a>
+          <a class="btn btn-ghost" href="#">Visit a showroom</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 400 340" preserveAspectRatio="xMidYMid slice">
+          <rect width="400" height="340" fill="#d9c7b4"/>
+          <rect y="250" width="400" height="90" fill="#b89a7e"/>
+          <rect x="250" y="40" width="110" height="140" rx="4" fill="#efe6da"/>
+          <rect x="262" y="52" width="86" height="116" fill="#cdd6cf"/>
+          <rect x="60" y="170" width="230" height="70" rx="14" fill="#8a5a3c"/>
+          <rect x="48" y="150" width="40" height="95" rx="12" fill="#7a4e33"/>
+          <rect x="262" y="150" width="40" height="95" rx="12" fill="#7a4e33"/>
+          <rect x="80" y="140" width="85" height="45" rx="10" fill="#a8775a"/>
+          <rect x="175" y="140" width="85" height="45" rx="10" fill="#a8775a"/>
+          <rect x="72" y="240" width="8" height="18" fill="#4a3426"/>
+          <rect x="270" y="240" width="8" height="18" fill="#4a3426"/>
+          <line x1="345" y1="250" x2="345" y2="120" stroke="#3d342c" stroke-width="4"/>
+          <path d="M320 120 h50 l-10 -30 h-30 z" fill="#f2e3c6"/>
+          <ellipse cx="200" cy="300" rx="120" ry="14" fill="#a68769"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="perks">
+    <div class="wrap">
+      <div><strong>Free delivery</strong>On orders over $150</div>
+      <div><strong>30-day returns</strong>Change your mind? No problem</div>
+      <div><strong>5-year warranty</strong>On all solid-wood furniture</div>
+      <div><strong>Design advice</strong>Chat with our team any time</div>
+    </div>
+  </div>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="section-head"><h2>Shop by room</h2><a href="#">View all rooms →</a></div>
+      <div class="cats">
+        <a class="cat c1" href="#">Living Room</a>
+        <a class="cat c2" href="#">Bedroom</a>
+        <a class="cat c3" href="#">Dining</a>
+        <a class="cat c4" href="#">Outdoor</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head"><h2>Bestsellers</h2><a href="#">Shop bestsellers →</a></div>
+      <div class="products">
+        <a class="card" href="#">
+          <div class="img"><svg viewBox="0 0 100 100"><rect x="10" y="45" width="80" height="28" rx="6" fill="#8a5a3c"/><rect x="6" y="38" width="14" height="38" rx="5" fill="#7a4e33"/><rect x="80" y="38" width="14" height="38" rx="5" fill="#7a4e33"/><rect x="18" y="34" width="30" height="16" rx="4" fill="#a8775a"/><rect x="52" y="34" width="30" height="16" rx="4" fill="#a8775a"/></svg></div>
+          <span class="badge">Bestseller</span>
+          <h3>Halden 3-Seater Sofa</h3>
+          <div class="meta">Boucle · Oat</div>
+          <div class="price">$1,290</div>
+        </a>
+        <a class="card" href="#">
+          <div class="img"><svg viewBox="0 0 100 100"><line x1="50" y1="88" x2="50" y2="34" stroke="#3d342c" stroke-width="3"/><path d="M30 34 h40 l-8 -20 h-24 z" fill="#e8d3ad"/><ellipse cx="50" cy="89" rx="16" ry="4" fill="#3d342c"/></svg></div>
+          <h3>Sora Linen Floor Lamp</h3>
+          <div class="meta">Oak · Natural linen</div>
+          <div class="price">$245</div>
+        </a>
+        <a class="card" href="#">
+          <div class="img"><svg viewBox="0 0 100 100"><rect x="14" y="40" width="72" height="8" rx="2" fill="#9b6b48"/><rect x="20" y="48" width="5" height="38" fill="#7a4e33"/><rect x="75" y="48" width="5" height="38" fill="#7a4e33"/></svg></div>
+          <span class="badge">-20%</span>
+          <h3>Ashby Solid Oak Dining Table</h3>
+          <div class="meta">Seats 6 · 180 cm</div>
+          <div class="price">$880 <s>$1,100</s></div>
+        </a>
+        <a class="card" href="#">
+          <div class="img"><svg viewBox="0 0 100 100"><path d="M34 30 q16 -8 32 0 l4 50 q-20 8 -40 0 z" fill="#c9b49a"/><path d="M40 30 q10 -14 20 0" fill="none" stroke="#5b7a5a" stroke-width="3"/><path d="M50 26 q-8 -14 -16 -10 M50 26 q8 -14 16 -10" fill="none" stroke="#5b7a5a" stroke-width="3"/></svg></div>
+          <h3>Mira Stoneware Vase</h3>
+          <div class="meta">Hand-thrown · Sand glaze</div>
+          <div class="price">$68</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block story">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Our story</div>
+        <h2>Made slowly, built to last.</h2>
+        <p>We work directly with a small group of furniture makers and ceramicists. Every piece is made to order from responsibly sourced materials, so it arrives ready for decades of everyday life, not just a season.</p>
+        <p>Not sure what fits your space? Our design team is happy to help. Just start a chat using the button in the corner.</p>
+      </div>
+      <div class="quote">
+        <p>“The sofa arrived two days early and the team helped me choose the right fabric over chat. Lovely service.”</p>
+        <span>Sample review · Halden 3-Seater Sofa</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="block news">
+    <div class="wrap">
+      <h2>Get 10% off your first order</h2>
+      <p>Join our newsletter for new arrivals, styling ideas and members-only offers.</p>
+      <form onsubmit="return false">
+        <input type="email" placeholder="Your email address" aria-label="Email address">
+        <button class="btn btn-primary" type="submit" style="border:0;cursor:pointer">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div>
+        <div class="logo" style="color:#fff">Velmora<span>.</span></div>
+        <p style="line-height:1.7;margin-top:12px">Furniture, lighting and decor made by independent workshops.</p>
+      </div>
+      <div><h4>Shop</h4><ul><li>New in</li><li>Furniture</li><li>Lighting</li><li>Decor</li><li>Sale</li></ul></div>
+      <div><h4>Help</h4><ul><li>Delivery</li><li>Returns</li><li>Warranty</li><li>Track your order</li><li>Contact us</li></ul></div>
+      <div><h4>Company</h4><ul><li>About us</li><li>Showrooms</li><li>Careers</li><li>Trade program</li></ul></div>
+    </div>
+    <div class="legal">© 2026 Velmora Home. Demo website for Intellicon WebChat documentation.</div>
+  </footer>
+
+  <!-- Intellicon WebChat widget (Docs Demo Bot) -->
+  <script id="intelli-chat-widget-code">
+    (function (d, t, id) {
+      if (d.getElementById(id)) return;
+      var fjs = d.getElementsByTagName(t)[0];
+      var js = d.createElement(t);
+
+      js.id = id;
+      js.src = 'https://socialconnect.contegris.com:443/widget/4acf8f911b078fc07d2b6d6eeeb10989/embed.js?'+'title='+document.title+'&page='+window.location.href;
+      js.async = true;
+      fjs.parentNode.insertBefore(js, fjs);
+    })(document, 'script', 'intelli-chat-widget');
+  </script>
+</body>
+</html>
